@@ -14,7 +14,10 @@
 <body>
   <div id="app">
     <!-- SIDEBAR CONTATTI -->
-    <header>
+    <header class="header">
+      <div class="green-bar"></div>
+    </header>
+    <main class="main">
       <div class="contact-container">
         <div class="info">
           <!-- left side  -->
@@ -25,8 +28,8 @@
               <i class="fa-solid fa-spinner"></i>
               <i class="fa-solid fa-message"></i>
               <i class="fa-solid fa-ellipsis-vertical menu_left_bar"></i>
-            </div><!--icons-->
-          </div><!--left-side-->
+            </div>
+          </div>
 
           <!--right side-->
           <img src="./img/avatar_2.jpg" alt="">
@@ -36,45 +39,58 @@
               <i class="fa-solid fa-magnifying-glass"></i>
               <i class="fa-solid fa-paperclip"></i>
               <i class="fa-solid fa-ellipsis-vertical menu_left_bar"></i>
-            </div><!--icons-->
+            </div>
           </div><!--right-icon-->
         </div><!--info-->
+      
 
-        <!-- banner notifiche  -->
-        <div class="notifiche">
-          <span class="bell">
-            <i class="fa-solid fa-bell-slash"></i>
-          </span>
-          <span>
-            <h5>Ricevi notifiche di nuovi messaggi</h5>
-            <a class="notifiche-desktop" href="#">Attiva le notifiche Desktop</a>
-          </span>
-        </div><!--notifiche-->
+      <!-- banner notifiche  -->
+      <div class="notifiche">
+        <span class="bell">
+          <i class="fa-solid fa-bell-slash"></i>
+        </span>
+        <span>
+          <h5>Ricevi notifiche di nuovi messaggi</h5>
+          <a class="notifiche-desktop" href="#">Attiva le notifiche Desktop</a>
+        </span>
+      </div><!--notifiche-->
 
-        <!-- searchbar -->
-        <div class="search">
-          <i class="fa-solid fa-magnifying-glass"></i>
-          <input type="text" placeholder="Cerca o inizia una nuova chat">
-        </div><!--search-->
+          <!-- searchbar -->
+    <div class="search">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <input type="text" placeholder="Cerca o inizia una nuova chat">
+    </div><!--search-->
+        <!--chat-left -->
+    <ul class="list">
+      <li>
+        <div class="chat-left">
+          <img class="profil-pic" src="./img/avatar_4.jpg" alt="">
+          <div class="info-contact">
+            <span class="contact-name">Michele</span>
+            <p class="status">Ultimo messaggio inviato</p>
+          </div>
+          <span class="date">12:00</span>
+        </div>
+      </li>
+    </ul>
+  </div><!--contact-container-->
 
-        <!-- chat-left  -->
-        <ul class="list">
-          <li>
-            <div class="chat-left">
-              <img class="profil-pic" src="./img/avatar_4.jpg" alt="">
-              <div class="info-contact">
-                <span class="contact-name">Michele</span>
-                <p class="status">Ultimo messaggio inviato</p>
-              </div>
-              <span class="date">12:00</span>
-            </div>
-          </li>
-        </ul>
-        
-        
 
-      </div> <!--sidebar-->
-      <script src="./js/app.js"></script>
+    </main>
+
+
+
+
+
+
+
+
+
+
+
+
+     
+    <script src="./js/app.js"></script>
 </body>
 
 </html>

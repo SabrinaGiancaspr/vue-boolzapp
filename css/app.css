@@ -4,6 +4,29 @@
   box-sizing: border-box;
 }
 
+#app {
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  background-color: #009688;
+  height: 130px;
+  position: relative;
+}
+
+.green-bar {
+  height: 100%;
+}
+
+.main-content {
+  background-color: #DBDBD2;
+  padding: 20px;
+  margin-top: -20px;
+}
+
 /* sidebar  */
 #user {
   margin-left: 10px;
@@ -12,6 +35,12 @@
 .contact-container {
   width: 80%;
   height: 100%;
+  margin: 0 auto;
+  margin-top: 25px;
+  position: absolute;
+  top: 10px;
+  left: 50px;
+  right: 50px;
 }
 
 .info {
@@ -134,7 +163,8 @@
 }
 
 .info-contact {
-  flex: 1; /* Fai espandere questo div a tutto lo spazio rimanente */
+  flex: 1;
+  /* Fai espandere questo div a tutto lo spazio rimanente */
 }
 
 .contact-name {
@@ -152,5 +182,3 @@
   color: rgb(116, 115, 115);
   padding-bottom: 20px;
 }
-
-
