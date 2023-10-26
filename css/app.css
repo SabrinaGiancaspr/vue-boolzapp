@@ -109,28 +109,48 @@
 }
 
 /* chat-left */
-
-.chat-left{
+.list {
   width: 35%;
   min-height: 80px;
-  display: flex;
-  align-items: center;
   border: 1px solid black;
 }
 
-.profil-pic{
+.list li {
+  list-style: none;
+  border-bottom: 1px solid #D7DBD6;
+  min-height: 65px;
+  padding: 10px;
+}
+
+.chat-left {
+  display: flex;
+  align-items: center;
+}
+
+.profil-pic {
   width: 60px;
   border-radius: 100%;
-  margin-left: 20px;
   margin-right: 10px;
 }
 
-.contact-name{
+.info-contact {
+  flex: 1; /* Fai espandere questo div a tutto lo spazio rimanente */
+}
+
+.contact-name {
   font-size: 17px;
   font-weight: bold;
 }
 
-.status{
+.status {
   font-size: 13px;
   color: #a09f9fc9;
 }
+
+.date {
+  font-size: 15px;
+  color: rgb(116, 115, 115);
+  padding-bottom: 20px;
+}
+
+
