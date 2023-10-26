@@ -30,13 +30,13 @@
   justify-content: space-between;
   border-right: 1px solid #bfbdbd;
   height: 60px;
-} 
+}
 
-.fa-ellipsis-vertical{
+.fa-ellipsis-vertical {
   margin-right: 10px;
 }
 
-.icons{
+.icons {
   gap: 21px;
   display: flex;
   color: #919191;
@@ -48,6 +48,7 @@
   width: 40px;
   margin-left: 10px;
 }
+
 /* right  */
 
 .right-icon {
@@ -67,15 +68,16 @@
   align-items: center;
 }
 
-.fa-bell-slash{
+.fa-bell-slash {
   color: #8EDAFC;
 }
 
-.notifiche-desktop{
+.notifiche-desktop {
   color: rgb(75, 74, 74);
   font-size: 13px;
 }
-.bell{
+
+.bell {
   width: 40px;
   height: 40px;
   background-color: #fff;
@@ -84,4 +86,23 @@
   justify-content: center;
   align-items: center;
   margin: 10px;
+}
+
+/* search bar  */
+
+.search {
+  position: relative;
+  margin: 10px 30px 10px 10px;
+}
+
+.search i {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+}
+
+.search input {
+  width: 35%;
+  padding: 10px 10px 10px 30px;
 }
