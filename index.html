@@ -48,7 +48,7 @@
       <ul class="list">
         <li v-for="contact in contacts" :key="contact.id">
           <div class="chat-left">
-            <img class="profil-pic" src="./img/avatar_4.jpg" alt="">
+            <img class="profil-pic" v-bind:src="contact.avatar" alt="">
             <div class="info-contact">
               <span class="contact-name">{{contact.name}}</span>
               <p class="status">Ultimo messaggio inviato</p>
