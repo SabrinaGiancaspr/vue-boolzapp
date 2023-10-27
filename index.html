@@ -46,7 +46,7 @@
 
       <!--chat-left -->
       <ul class="list">
-        <li v-for="(contact, i) in contacts" @click="active(i)" :class="{ 'active': i === activeIndex }">
+        <li v-for="(contact, i) in contacts" @click="active(i)" :class="{'active': i === activeIndex}">
           <div class="chat-left">
             <img class="profil-pic" v-bind:src="contact.avatar" alt="">
             <div class="info-contact">
@@ -67,7 +67,7 @@
             <img src="./img/avatar_1.jpg" alt="">
           </figure>
             <div class="info-contact">
-              <span class="contact-name">Michele</span>
+              <span class="contact-name">{{contacts[activeIndex].name}}</span>
               <p class="status">Ultimo messaggio inviato</p>
             </div>
             <div class="right-icon">
@@ -82,12 +82,13 @@
 
       <!-- chat right  -->
       <ul class="chat">
-        <li class="message sent">Lorem ipsum dolor sit amet.</li>
-        <li class="message received">Lorem, ipsum dolor.</li>
+        <li class="message sent" v-for="item in contacts[activeIndex].messages" :class="{ sent: item.status === 'sent', received: item.status === 'received' }"
+        >{{item.message}}</li>
+        <!-- <li class="message received">Lorem, ipsum dolor.</li>
         <li class="message sent">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
           alias deserunt in.
-        </li>
+        </li> -->
       </ul>
 
       <!-- toolbar chat  -->
