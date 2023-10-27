@@ -24,7 +24,7 @@ img {
       #d2dbdc 100%);
 }
 .active{
-  background-color: gray;
+  background-color: rgb(225, 222, 222);
 }
 /* container  */
 .contact-container {

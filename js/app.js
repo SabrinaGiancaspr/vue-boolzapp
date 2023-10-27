@@ -172,5 +172,6 @@ app({
     active(index) {
       this.activeIndex = index;
     },
+
   },  
 }).mount('#app');
