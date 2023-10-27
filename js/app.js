@@ -3,7 +3,7 @@ app({
   data() {
     return {
       activeIndex: 0,
-      
+
       contacts: [
         {
           name: 'Michele',
@@ -167,12 +167,28 @@ app({
           ],
         },
       ],
+      newMessage: '', //definire newMessage
     };
   },
   methods: {
     active(index) {
       this.activeIndex = index;
     },
-
-  },  
+    addMessage() {
+      // 1. Verifica se this.newMessage non è una stringa vuota (cioè, l'utente ha inserito un messaggio).
+  if (this.newMessage) {
+     // 2. Se this.newMessage non è vuoto, crea un nuovo oggetto di messaggio e aggiungi il messaggio.
+      if (this.newMessage) {
+        this.contacts[this.activeIndex].messages.push({
+           // Contenuto del messaggio preso da this.newMessage
+          message: this.newMessage,
+           // Imposta lo stato del messaggio come "sent"
+          status: 'sent',
+        });
+        // pulisce l'input impostando this.newMessage su una stringa vuota.
+        this.newMessage = '';
+      }
+    }
+  }
+  },
 }).mount('#app');

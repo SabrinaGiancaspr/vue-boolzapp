@@ -91,7 +91,8 @@
           <span class="icon">
             <i class="fa-regular fa-face-smile"></i>
           </span>
-          <input
+          <input @keyup.enter=" addMessage()"
+          v-model="newMessage"
             class="chat-input"
             type="text"
             placeholder="Scrivi messaggio"
