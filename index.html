@@ -64,7 +64,7 @@
       <div class="sidebar-right">
         <div class="info">
           <figure class="contact-img">
-            <img src="./img/avatar_1.jpg" alt="">
+            <img v-bind:src="contacts[activeIndex].avatar" alt="">
           </figure>
             <div class="info-contact">
               <span class="contact-name">{{contacts[activeIndex].name}}</span>
@@ -84,11 +84,6 @@
       <ul class="chat">
         <li class="message sent" v-for="item in contacts[activeIndex].messages" :class="{ sent: item.status === 'sent', received: item.status === 'received' }"
         >{{item.message}}</li>
-        <!-- <li class="message received">Lorem, ipsum dolor.</li>
-        <li class="message sent">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
-          alias deserunt in.
-        </li> -->
       </ul>
 
       <!-- toolbar chat  -->
