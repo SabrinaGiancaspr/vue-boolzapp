@@ -174,21 +174,16 @@ app({
     active(index) {
       this.activeIndex = index;
     },
-    addMessage() {
-      //Verifica se this.newMessage non è una stringa vuota (cioè, l'utente ha inserito un messaggio).
-  if (this.newMessage !=="") {
-     //Se this.newMessage non è vuoto, crea un nuovo oggetto di messaggio e aggiungi il messaggio.
-      if (this.newMessage) {
-        this.contacts[this.activeIndex].messages.push({
-           // Contenuto del messaggio preso da this.newMessage
-          message: this.newMessage,
-           // Imposta lo stato del messaggio come "sent"
-          status: 'sent',
-        });
-        // pulisce l'input impostando this.newMessage su una stringa vuota.
-        this.newMessage = '';
-      }
-    }
+
+      addMessage() {
+        // .trim rimozione spazzi bianchi 
+        const message = this.newMessage.trim();
+        // se l'utente ha inserito un messaggio valido 
+        if (message) {
+          this.contacts[this.activeIndex].messages.push({ message, status: 'sent' });
+          this.newMessage = '';
+        }
+    
     setTimeout(()=>{
       const autoAnswer={
         message:"adesso no!!",
