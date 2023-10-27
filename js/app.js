@@ -175,9 +175,9 @@ app({
       this.activeIndex = index;
     },
     addMessage() {
-      // 1. Verifica se this.newMessage non è una stringa vuota (cioè, l'utente ha inserito un messaggio).
-  if (this.newMessage) {
-     // 2. Se this.newMessage non è vuoto, crea un nuovo oggetto di messaggio e aggiungi il messaggio.
+      //Verifica se this.newMessage non è una stringa vuota (cioè, l'utente ha inserito un messaggio).
+  if (this.newMessage !=="") {
+     //Se this.newMessage non è vuoto, crea un nuovo oggetto di messaggio e aggiungi il messaggio.
       if (this.newMessage) {
         this.contacts[this.activeIndex].messages.push({
            // Contenuto del messaggio preso da this.newMessage
@@ -189,6 +189,13 @@ app({
         this.newMessage = '';
       }
     }
+    setTimeout(()=>{
+      const autoAnswer={
+        message:"adesso no!!",
+        status: "received"
+      }
+      this.contacts[this.activeIndex].messages.push(autoAnswer);
+    },1000);
   }
   },
 }).mount('#app');
