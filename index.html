@@ -10,40 +10,20 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <title>Boolzapp</title>
 </head>
-
-<body>
-  <div id="app">
-    <!-- SIDEBAR CONTATTI -->
-    <header class="header">
-      <div class="green-bar"></div>
-    </header>
-    <main class="main">
-      <div class="contact-container">
-        <div class="info">
-          <!-- left side  -->
-          <img src="./img/avatar_1.jpg" alt="" />
-          <div class="left-side">
-            <h5 id="user">Sabrina</h5>
-            <div class="icons">
-              <i class="fa-solid fa-spinner"></i>
-              <i class="fa-solid fa-message"></i>
-              <i class="fa-solid fa-ellipsis-vertical menu_left_bar"></i>
-            </div>
-          </div>
-
-          <!--right side-->
-          <img src="./img/avatar_2.jpg" alt="">
-          <div class="right-icon">
-            <h5 id="user">Martina</h5>
-            <div class="icons">
-              <i class="fa-solid fa-magnifying-glass"></i>
-              <i class="fa-solid fa-paperclip"></i>
-              <i class="fa-solid fa-ellipsis-vertical menu_left_bar"></i>
-            </div>
-          </div><!--right-icon-->
-        </div><!--info-->
-      
-
+<div id="app">
+  <div class=" debug contact-container">
+    <div class="sidebar">
+      <div class="debug info">
+        <figure class="contact-img">
+          <img src="./img/avatar_1.jpg" alt="">
+          <h5 id="user">Sabrina</h5>
+        </figure>
+        <div class="icons">
+          <i class="fa-solid fa-spinner"></i>
+          <i class="fa-solid fa-message"></i>
+          <i class="fa-solid fa-ellipsis-vertical menu_left_bar"></i>
+        </div><!--icon-->
+      </div><!--info-->
       <!-- banner notifiche  -->
       <div class="notifiche">
         <span class="bell">
@@ -54,43 +34,97 @@
           <a class="notifiche-desktop" href="#">Attiva le notifiche Desktop</a>
         </span>
       </div><!--notifiche-->
-
-          <!-- searchbar -->
-    <div class="search">
-      <i class="fa-solid fa-magnifying-glass"></i>
-      <input type="text" placeholder="Cerca o inizia una nuova chat">
-    </div><!--search-->
-        <!--chat-left -->
-    <ul class="list">
-      <li>
-        <div class="chat-left">
-          <img class="profil-pic" src="./img/avatar_4.jpg" alt="">
-          <div class="info-contact">
-            <span class="contact-name">Michele</span>
-            <p class="status">Ultimo messaggio inviato</p>
+      <!-- searchbar -->
+      <div class="search">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" placeholder="Cerca o inizia una nuova chat">
+      </div><!--search-->
+      <!--chat-left -->
+      <ul class="list">
+        <li>
+          <div class="chat-left">
+            <img class="profil-pic" src="./img/avatar_4.jpg" alt="">
+            <div class="info-contact">
+              <span class="contact-name">Michele</span>
+              <p class="status">Ultimo messaggio inviato</p>
+            </div>
+            <span class="date">12:00</span>
           </div>
-          <span class="date">12:00</span>
-        </div>
-      </li>
-    </ul>
+        </li>
+        <li>
+          <div class="chat-left">
+            <img class="profil-pic" src="./img/avatar_4.jpg" alt="">
+            <div class="info-contact">
+              <span class="contact-name">Michele</span>
+              <p class="status">Ultimo messaggio inviato</p>
+            </div>
+            <span class="date">12:00</span>
+          </div>
+        </li>
+        <li>
+          <div class="chat-left">
+            <img class="profil-pic" src="./img/avatar_4.jpg" alt="">
+            <div class="info-contact">
+              <span class="contact-name">Michele</span>
+              <p class="status">Ultimo messaggio inviato</p>
+            </div>
+            <span class="date">12:00</span>
+          </div>
+        </li>
+      </ul>
+    </div><!--sidebar-->
+    <div class="main-content">
+      <div class="sidebar-right">
+        <div class="info">
+          <figure class="contact-img">
+            <img src="./img/avatar_1.jpg" alt="">
+          </figure>
+            <div class="info-contact">
+              <span class="contact-name">Michele</span>
+              <p class="status">Ultimo messaggio inviato</p>
+            </div>
+            <div class="right-icon">
+              <div class="icons">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <i class="fa-solid fa-paperclip"></i>
+                <i class="fa-solid fa-ellipsis-vertical menu_left_bar"></i>
+              </div><!--icons-->
+            </div><!--right-icon-->
+        </div><!--info-->
+      </div><!--sidebar-right-->
+      <ul class="chat">
+        <li class="message sent">Lorem ipsum dolor sit amet.</li>
+        <li class="message received">Lorem, ipsum dolor.</li>
+        <li class="message sent">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
+          alias deserunt in.
+        </li>
+      </ul>
+
+        <div class="toolbar toolbar-chat">
+          <span class="icon">
+            <i class="fa-regular fa-face-smile"></i>
+          </span>
+
+          <input
+            class="chat-input"
+            type="text"
+            placeholder="Scrivi messaggio"
+          />
+
+          <span class="icon">
+            <i class="fa-solid fa-microphone"></i>
+          </span>
+          
+        </div><!--toolbar-->
+    </div><!--main-content-->
   </div><!--contact-container-->
+</div><!--app-->
 
 
-    </main>
-
-
-
-
-
-
-
-
-
-
-
-
-     
-    <script src="./js/app.js"></script>
+<script src="./js/app.js"></script>
 </body>
+
+</html>
 
 </html>
