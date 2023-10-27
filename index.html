@@ -51,9 +51,9 @@
             <img class="profil-pic" v-bind:src="contact.avatar" alt="">
             <div class="info-contact">
               <span class="contact-name">{{contact.name}}</span>
-              <p class="status">ultimo mess inviato</p>
+              <p class="status">{{lastMessage(i).message}}</p>
             </div>
-            <span class="date">12:00</span>
+            <span class="date">{{lastMessage(i).date}}</span>
           </div>
         </li>
       </ul>

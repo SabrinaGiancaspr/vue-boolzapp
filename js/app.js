@@ -175,22 +175,31 @@ app({
       this.activeIndex = index;
     },
 
-      addMessage() {
-        // .trim rimozione spazzi bianchi 
-        const message = this.newMessage.trim();
-        // controllo se l'utente ha inserito un messaggio valido allora invia
-        if (message!== "") {
-          this.contacts[this.activeIndex].messages.push({ message, status: 'sent' });
-          this.newMessage = '';
-        }
-    
-    setTimeout(()=>{
-      const autoAnswer={
-        message:"adesso no!!",
-        status: "received"
+    addMessage() {
+      // .trim rimozione spazzi bianchi
+      const message = this.newMessage.trim();
+      // controllo se l'utente ha inserito un messaggio valido allora invia
+      if (message !== '') {
+        this.contacts[this.activeIndex].messages.push({
+          message,
+          status: 'sent',
+        });
+        this.newMessage = '';
       }
-      this.contacts[this.activeIndex].messages.push(autoAnswer);
-    },1000);
-  }
+
+      setTimeout(() => {
+        const autoAnswer = {
+          message: 'adesso no!!',
+          status: 'received',
+        };
+        this.contacts[this.activeIndex].messages.push(autoAnswer);
+      }, 1000);
+    },
+    lastMessage: function (index) {
+      // l'array di messaggi associato al contatto corrispondente all'indice fornito 
+      let message = this.contacts[index].messages;
+      // ottenere l'indice dell'ultimo elemento dell'array dei messaggi.
+      return message[message.length - 1];
+    },
   },
 }).mount('#app');
