@@ -175,22 +175,23 @@ app({
       this.activeIndex = index;
     },
 
-      addMessage() {
-        // .trim rimozione spazzi bianchi 
-        const message = this.newMessage.trim();
-        // se l'utente ha inserito un messaggio valido 
-        if (message) {
-          this.contacts[this.activeIndex].messages.push({ message, status: 'sent' });
-          this.newMessage = '';
-        }
-    
-    setTimeout(()=>{
-      const autoAnswer={
-        message:"adesso no!!",
-        status: "received"
-      }
-      this.contacts[this.activeIndex].messages.push(autoAnswer);
-    },1000);
-  }
+    addMessage() {
+      // .trim rimozione spazzi bianchi
+      const message = this.newMessage.trim();
+      // se l'utente ha inserito un messaggio valido
+      this.contacts[this.activeIndex].messages.push({
+        message,
+        status: 'sent',
+      });
+      this.newMessage = '';
+
+      setTimeout(() => {
+        const autoAnswer = {
+          message: 'adesso no!!',
+          status: 'received',
+        };
+        this.contacts[this.activeIndex].messages.push(autoAnswer);
+      }, 1000);
+    },
   },
 }).mount('#app');
