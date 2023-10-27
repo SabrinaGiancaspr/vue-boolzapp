@@ -46,12 +46,12 @@
 
       <!--chat-left -->
       <ul class="list">
-        <li v-for="contact in contacts" :key="contact.id">
+        <li v-for="(contact, i) in contacts" @click="active(i)" :class="{ 'active': i === activeIndex }">
           <div class="chat-left">
             <img class="profil-pic" v-bind:src="contact.avatar" alt="">
             <div class="info-contact">
               <span class="contact-name">{{contact.name}}</span>
-              <p class="status">Ultimo messaggio inviato</p>
+              <p class="status">ultimo mess inviato</p>
             </div>
             <span class="date">12:00</span>
           </div>
