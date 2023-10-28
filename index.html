@@ -56,7 +56,7 @@
                 <span class="contact-name">{{contact.name}}</span>
                 <p class="status">{{lastMessage(i).message}}</p>
               </div>
-              <span class="date">{{lastMessage(i).date}}</span>
+              <span class="date">{{lastMessage(i).date.toFormat("HH:mm")}}</span>
             </div>
           </li>
         </ul>
@@ -85,8 +85,15 @@
 
         <!-- chat right  -->
         <ul class="chat">
-          <li class="message sent" v-for="item in contacts[activeIndex].messages"
-            :class="{ sent: item.status === 'sent', received: item.status === 'received' }">{{item.message}} </li>
+          <li class="message sent" v-for="(item, index) in contacts[activeIndex].messages"
+            :class="{ sent: item.status === 'sent', received: item.status === 'received' }">{{item.message}} 
+            <span class="date-msg">{{item.date.toFormat("HH:mm")}}</span> 
+            <i class="fa-solid fa-chevron-down" @click="showDropdown(index)"></i>
+            <div class="dropdown" v-if="item.dropdown">
+              <div>Message info</div>
+              <div class="delete-message" @click="deleteMsg(index)">Delete Message</div>
+            </div>
+          </li>
         </ul>
 
         <!-- toolbar chat  -->
@@ -106,6 +113,7 @@
   </div><!--app-->
 
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/luxon@3.4.3/build/global/luxon.min.js"></script>
   <script src="./js/app.js"></script>
 </body>
 

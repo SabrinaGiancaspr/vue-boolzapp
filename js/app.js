@@ -1,4 +1,5 @@
 const app = Vue.createApp;
+const DateTime = luxon.DateTime;
 app({
   data() {
     return {
@@ -10,22 +11,25 @@ app({
           avatar: './img/avatar_1.jpg',
           visible: true,
           messages: [
-            //Array messaggA
+            //Array messaggi
 
             {
-              date: '10/01/2020 15:30:55',
+              date: DateTime.local(2020, 1, 10, 15, 30),
               message: 'Hai portato a spasso il cane?',
               status: 'sent',
+              dropdown: false,
             },
             {
-              date: '10/01/2020 15:50:00',
+              date: DateTime.local(2020, 1, 10, 15, 50),
               message: 'Ricordati di stendere i panni',
               status: 'sent',
+              dropdown: false,
             },
             {
-              date: '10/01/2020 16:15:22',
+              date: DateTime.local(2020, 1, 10, 16, 50),
               message: 'Tutto fatto!',
               status: 'received',
+              dropdown: false,
             },
           ],
         },
@@ -35,19 +39,22 @@ app({
           visible: true,
           messages: [
             {
-              date: '20/03/2020 16:30:00',
+              date: DateTime.local(2020, 1, 10, 16, 30),
               message: 'Ciao come stai?',
               status: 'sent',
+              dropdown: false,
             },
             {
-              date: '20/03/2020 16:30:55',
+              date: DateTime.local(2020, 3, 20, 16, 50),
               message: 'Bene grazie! Stasera ci vediamo?',
               status: 'received',
+              dropdown: false,
             },
             {
-              date: '20/03/2020 16:35:00',
+              date: DateTime.local(2020, 3, 20, 16, 35),
               message: 'Mi piacerebbe ma devo andare a fare la spesa.',
               status: 'sent',
+              dropdown: false,
             },
           ],
         },
@@ -57,19 +64,22 @@ app({
           visible: true,
           messages: [
             {
-              date: '28/03/2020 10:10:40',
+              date: DateTime.local(2020, 3, 28, 10, 50),
               message: 'La Marianna va in campagna',
               status: 'received',
+              dropdown: false,
             },
             {
-              date: '28/03/2020 10:20:10',
+              date: DateTime.local(2020, 3, 28, 10, 20),
               message: 'Sicuro di non aver sbagliato chat?',
               status: 'sent',
+              dropdown: false,
             },
             {
-              date: '28/03/2020 16:15:22',
+              date: DateTime.local(2020, 3, 28, 16, 15),
               message: 'Ah scusa!',
               status: 'received',
+              dropdown: false,
             },
           ],
         },
@@ -79,14 +89,16 @@ app({
           visible: true,
           messages: [
             {
-              date: '10/01/2020 15:30:55',
+              date: DateTime.local(2020, 1, 10, 15, 50),
               message: 'Lo sai che ha aperto una nuova pizzeria?',
               status: 'sent',
+              dropdown: false,
             },
             {
-              date: '10/01/2020 15:50:00',
+              date: DateTime.local(2020, 1, 10, 15, 50),
               message: 'Si, ma preferirei andare al cinema',
               status: 'received',
+              dropdown: false,
             },
           ],
         },
@@ -96,14 +108,16 @@ app({
           visible: true,
           messages: [
             {
-              date: '10/01/2020 15:30:55',
+              date: DateTime.local(2020, 1, 10, 15, 30),
               message: 'Ricordati di chiamare la nonna',
               status: 'sent',
+              dropdown: false,
             },
             {
-              date: '10/01/2020 15:50:00',
+              date: DateTime.local(2020, 1, 10, 15, 30),
               message: 'Va bene, stasera la sento',
               status: 'received',
+              dropdown: false,
             },
           ],
         },
@@ -113,19 +127,22 @@ app({
           visible: true,
           messages: [
             {
-              date: '10/01/2020 15:30:55',
+              date: DateTime.local(2020, 1, 10, 15, 30),
               message: 'Ciao Claudia, hai novità?',
               status: 'sent',
+              dropdown: false,
             },
             {
-              date: '10/01/2020 15:50:00',
+              date: DateTime.local(2020, 1, 10, 15, 50),
               message: 'Non ancora',
               status: 'received',
+              dropdown: false,
             },
             {
-              date: '10/01/2020 15:51:00',
+              date: DateTime.local(2020, 1, 10, 15, 50),
               message: 'Nessuna nuova, buona nuova',
               status: 'sent',
+              dropdown: false,
             },
           ],
         },
@@ -135,14 +152,16 @@ app({
           visible: true,
           messages: [
             {
-              date: '10/01/2020 15:30:55',
+              date: DateTime.local(2020, 1, 10, 15, 30),
               message: 'Fai gli auguri a Martina che è il suo compleanno!',
               status: 'sent',
+              dropdown: false,
             },
             {
-              date: '10/01/2020 15:50:00',
+              date: DateTime.local(2020, 1, 10, 15, 50),
               message: 'Grazie per avermelo ricordato, le scrivo subito!',
               status: 'received',
+              dropdown: false,
             },
           ],
         },
@@ -152,19 +171,22 @@ app({
           visible: true,
           messages: [
             {
-              date: '10/01/2020 15:30:55',
+              date: DateTime.local(2020, 1, 10, 15, 30),
               message: 'Ciao, andiamo a mangiare la pizza stasera?',
               status: 'received',
+              dropdown: false,
             },
             {
-              date: '10/01/2020 15:50:00',
+              date: DateTime.local(2020, 1, 10, 15, 50),
               message: "No, l'ho già mangiata ieri, ordiniamo sushi!",
               status: 'sent',
+              dropdown: false,
             },
             {
-              date: '10/01/2020 15:51:00',
+              date: DateTime.local(2020, 1, 10, 15, 51),
               message: 'OK!!',
               status: 'received',
+              dropdown: false,
             },
           ],
         },
@@ -187,25 +209,38 @@ app({
       if (message !== '') {
         this.contacts[this.activeIndex].messages.push({
           message,
+          date: DateTime.now(),
           status: 'sent',
+          dropdown: false,
         });
         this.newMessage = '';
       }
       // Funzione risposta automatica
       setTimeout(() => {
         const autoAnswer = {
-          message: 'adesso no!!',
+          message: 'adesso no >.< !!',
+          date: DateTime.now(),
           status: 'received',
+          dropdown: false,
         };
         this.contacts[this.activeIndex].messages.push(autoAnswer);
       }, 1000);
     },
     // Funzione per visualizzare ultimo messaggio ricevuto/inviato
-    lastMessage: function (index) {
+    lastMessage(index) {
       // l'array di messaggi associato al contatto corrispondente all'indice fornito
       let message = this.contacts[index].messages;
       // ottenere l'indice dell'ultimo elemento dell'array dei messaggi.
       return message[message.length - 1];
+    },
+
+    showDropdown(index) {
+      this.contacts[this.activeIndex].messages[index].dropdown =
+        !this.contacts[this.activeIndex].messages[index].dropdown;
+    },
+
+    deleteMsg(index) {
+      this.contacts[this.activeIndex].messages.splice(index, 1);
     },
   },
 

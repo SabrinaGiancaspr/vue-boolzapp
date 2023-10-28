@@ -84,7 +84,7 @@ img {
   cursor: pointer;
 }
 
-.icon{
+.icon {
   cursor: pointer;
 }
 
@@ -208,20 +208,54 @@ img {
   overflow: auto;
 }
 
+.date-msg {
+  font-size: 10px;
+  padding-left: 25px;
+  position: absolute;
+  bottom: 5px;
+  right: 15px;
+}
+
+.fa-chevron-down {
+  position: absolute;
+  right: 15px;
+  top: 5px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.dropdown {
+  background-color: white;
+  position: absolute;
+  right: 15px;
+  z-index: 1;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.delete-message{
+  cursor: pointer;
+}
+
 .message {
   border-radius: 16px;
   padding: 10px 20px;
   max-width: 80%;
+  position: relative;
 }
 
 .message.sent {
   background-color: #d5f9ba;
   align-self: flex-end;
+  padding-right: 100px;
 }
 
 .message.received {
   background-color: white;
   align-self: flex-start;
+  padding-right: 100px;
 }
 
 .toolbar {
@@ -254,16 +288,23 @@ img {
 
 /* hover  */
 
-.fa-spinner:hover, .fa-message:hover, .fa-ellipsis-vertical:hover, #user:hover, .fa-magnifying-glass:hover, .fa-paperclip:hover, .contact-name:hover{
+.fa-spinner:hover,
+.fa-message:hover,
+.fa-ellipsis-vertical:hover,
+#user:hover,
+.fa-magnifying-glass:hover,
+.fa-paperclip:hover,
+.contact-name:hover {
   color: rgb(16, 0, 247);
   font-size: 18px;
 }
 
-.fa-face-smile:hover, .fa-microphone:hover{
-  color: rgb(16, 0, 247); 
+.fa-face-smile:hover,
+.fa-microphone:hover {
+  color: rgb(16, 0, 247);
 }
 
-.bg-hover-chats:hover{
+.bg-hover-chats:hover {
   background-color: rgba(220, 213, 213, 0.72);
 }
 
