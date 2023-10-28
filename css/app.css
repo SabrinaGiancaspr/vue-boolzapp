@@ -297,13 +297,13 @@ img {
 .fa-magnifying-glass:hover,
 .fa-paperclip:hover,
 .contact-name:hover {
-  color: rgb(16, 0, 247);
+  color: rgb(20, 97, 252);
   font-size: 18px;
 }
 
 .fa-face-smile:hover,
 .fa-microphone:hover {
-  color: rgb(16, 0, 247);
+  color: rgb(20, 97, 252);
 }
 
 .bg-hover-chats:hover {
