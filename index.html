@@ -93,7 +93,7 @@
             <span class="date-msg">{{item.date.toFormat("HH:mm")}}</span> 
             <i class="fa-solid fa-chevron-down" @click="showDropdown(index)"></i>
             <div class="dropdown" v-if="item.dropdown">
-              <div>Message info</div>
+              <div class="delete-message">Message info</div>
               <div class="delete-message" @click="deleteMsg(index)">Delete Message</div>
             </div>
           </li>
