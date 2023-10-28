@@ -218,7 +218,8 @@ app({
       // Funzione risposta automatica
       setTimeout(() => {
         const autoAnswer = {
-          message: 'adesso no >.< !!',
+          message: '',
+          image: './img/madame.jpg',
           date: DateTime.now(),
           status: 'received',
           dropdown: false,
@@ -235,13 +236,12 @@ app({
     },
 
     showDropdown(index) {
-      this.contacts[this.activeIndex].messages[index].dropdown =
-        !this.contacts[this.activeIndex].messages[index].dropdown;
+      this.contacts[this.activeIndex].messages[index].dropdown = !this.contacts[this.activeIndex].messages[index].dropdown
     },
 
-    deleteMsg(index) {
-      this.contacts[this.activeIndex].messages.splice(index, 1);
-    },
+    deleteMsg(index){
+      this.contacts[this.activeIndex].messages.splice(index, 1)
+    }
   },
 
   // Funzione ricerca con filtro

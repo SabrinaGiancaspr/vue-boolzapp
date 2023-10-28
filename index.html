@@ -86,7 +86,10 @@
         <!-- chat right  -->
         <ul class="chat">
           <li class="message sent" v-for="(item, index) in contacts[activeIndex].messages"
-            :class="{ sent: item.status === 'sent', received: item.status === 'received' }">{{item.message}} 
+            :class="{ sent: item.status === 'sent', received: item.status === 'received' }">{{item.message}}
+            <div v-if="item.image">
+              <img :src="item.image" alt="Image" />
+            </div> 
             <span class="date-msg">{{item.date.toFormat("HH:mm")}}</span> 
             <i class="fa-solid fa-chevron-down" @click="showDropdown(index)"></i>
             <div class="dropdown" v-if="item.dropdown">
