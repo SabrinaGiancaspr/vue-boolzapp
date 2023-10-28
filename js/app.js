@@ -186,7 +186,7 @@ app({
               date: DateTime.local(2020, 1, 10, 15, 51),
               message: 'OK!!',
               status: 'received',
-              dropdown: false,
+              dropdown: false, // Di default false 
             },
           ],
         },
@@ -234,12 +234,15 @@ app({
       // ottenere l'indice dell'ultimo elemento dell'array dei messaggi.
       return message[message.length - 1];
     },
-
+    // funzione per vedere o meno il dropdown 
     showDropdown(index) {
+      //array contacts, specifichiamo l'indice attivo, prendiamo array messaggi e la proprietà dropdown quando è falsa non si vede
+      // qunado è diversa da falsa si vede 
       this.contacts[this.activeIndex].messages[index].dropdown = !this.contacts[this.activeIndex].messages[index].dropdown
     },
-
+    // funzione per cancellare il messaggio
     deleteMsg(index){
+      //.splice per cancellare il messaggio dell'elemento attivo
       this.contacts[this.activeIndex].messages.splice(index, 1)
     }
   },
