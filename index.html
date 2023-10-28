@@ -48,7 +48,8 @@
 
         <!--chat-left -->
         <ul class="list">
-          <li class="bg-hover-chats" v-for="(contact, i) in filteredList" @click="active(i)" :class="{'active': i === activeIndex}">
+          <li class="bg-hover-chats" v-for="(contact, i) in filteredList" @click="active(i)"
+            :class="{'active': i === activeIndex}">
             <div class="chat-left">
               <img class="profil-pic" v-bind:src="contact.avatar" alt="">
               <div class="info-contact">
@@ -85,13 +86,14 @@
         <!-- chat right  -->
         <ul class="chat">
           <li class="message sent" v-for="item in contacts[activeIndex].messages"
-            :class="{ sent: item.status === 'sent', received: item.status === 'received' }">{{item.message}}</li>
+            :class="{ sent: item.status === 'sent', received: item.status === 'received' }">{{item.message}} </li>
         </ul>
 
         <!-- toolbar chat  -->
         <div class="toolbar toolbar-chat">
           <span class="icon">
-            <i class="fa-regular fa-face-smile"></i>
+            <i class="fa-regular fa-face-smile hover-rotate"></i>
+
           </span>
           <input @keyup.enter=" addMessage()" v-model="newMessage" class="chat-input" type="text"
             placeholder="Scrivi messaggio" />
