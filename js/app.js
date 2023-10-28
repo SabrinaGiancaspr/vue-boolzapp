@@ -2,14 +2,16 @@ const app = Vue.createApp;
 app({
   data() {
     return {
-      activeIndex: 0,
-
+      activeIndex: 0, //Definire indice attivo default 0
+      //Contacts è il mio array di oggetti
       contacts: [
         {
-          name: 'Michele',
+          name: 'Michele', //Primo contatto "Michele"
           avatar: './img/avatar_1.jpg',
           visible: true,
           messages: [
+            //Array messaggA
+
             {
               date: '10/01/2020 15:30:55',
               message: 'Hai portato a spasso il cane?',
@@ -167,14 +169,17 @@ app({
           ],
         },
       ],
-      newMessage: '', //definire newMessage
+      newMessage: '', //definire newMessage vuoto
+      search: '', //Creo una variabile che rappresenta la barra di ricerca inizialmente vuota.
+      //quando l'utente inizia a digitare, il valore di search verrà aggiornato
     };
   },
   methods: {
+    // Funzione per definire l'indice attivo dopo il click
     active(index) {
       this.activeIndex = index;
     },
-
+    // Funzione per inviare messaggio
     addMessage() {
       // .trim rimozione spazzi bianchi
       const message = this.newMessage.trim();
@@ -186,7 +191,7 @@ app({
         });
         this.newMessage = '';
       }
-
+      // Funzione risposta automatica
       setTimeout(() => {
         const autoAnswer = {
           message: 'adesso no!!',
@@ -195,11 +200,25 @@ app({
         this.contacts[this.activeIndex].messages.push(autoAnswer);
       }, 1000);
     },
+    // Funzione per visualizzare ultimo messaggio ricevuto/inviato
     lastMessage: function (index) {
-      // l'array di messaggi associato al contatto corrispondente all'indice fornito 
+      // l'array di messaggi associato al contatto corrispondente all'indice fornito
       let message = this.contacts[index].messages;
       // ottenere l'indice dell'ultimo elemento dell'array dei messaggi.
       return message[message.length - 1];
+    },
+  },
+
+  // Funzione ricerca con filtro
+  computed: {
+    filteredList() {
+      //Converte il testo di ricerca in minuscolo
+      const search = this.search.toLowerCase();
+      //Filtra la lista dei contatti per trovare quelli che corrispondono al testo di ricerca
+      return this.contacts.filter((contact) =>
+        //La funzione includes() verifica se il nome del contatto contiene la stringa di ricerca
+        contact.name.toLowerCase().includes(search)
+      );
     },
   },
 }).mount('#app');

@@ -10,65 +10,67 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <title>Boolzapp</title>
 </head>
-<div id="app">
-  <div class=" debug contact-container">
-    
-    <!-- sidebar  -->
-    <div class="sidebar">
-      <div class="debug info">
-        <figure class="contact-img">
-          <img src="./img/avatar_1.jpg" alt="">
-          <h5 id="user">Sabrina</h5>
-        </figure>
-        <div class="icons">
-          <i class="fa-solid fa-spinner"></i>
-          <i class="fa-solid fa-message"></i>
-          <i class="fa-solid fa-ellipsis-vertical menu_left_bar"></i>
-        </div><!--icon-->
-      </div><!--info-->
 
-      <!-- banner notifiche  -->
-      <div class="notifiche">
-        <span class="bell">
-          <i class="fa-solid fa-bell-slash"></i>
-        </span>
-        <span>
-          <h5>Ricevi notifiche di nuovi messaggi</h5>
-          <a class="notifiche-desktop" href="#">Attiva le notifiche Desktop</a>
-        </span>
-      </div><!--notifiche-->
+<body>
+  <div id="app">
+    <div class="contact-container">
 
-      <!-- searchbar -->
-      <div class="search">
-        <i class="fa-solid fa-magnifying-glass"></i>
-        <input type="text" placeholder="Cerca o inizia una nuova chat">
-      </div><!--search-->
-
-      <!--chat-left -->
-      <ul class="list">
-        <li v-for="(contact, i) in contacts" @click="active(i)" :class="{'active': i === activeIndex}">
-          <div class="chat-left">
-            <img class="profil-pic" v-bind:src="contact.avatar" alt="">
-            <div class="info-contact">
-              <span class="contact-name">{{contact.name}}</span>
-              <p class="status">{{lastMessage(i).message}}</p>
-            </div>
-            <span class="date">{{lastMessage(i).date}}</span>
-          </div>
-        </li>
-      </ul>
-    </div><!--sidebar-->
-
-    <!-- main content  -->
-    <div class="main-content">
-      <div class="sidebar-right">
+      <!-- sidebar  -->
+      <div class="sidebar">
         <div class="info">
           <figure class="contact-img">
-            <img v-bind:src="contacts[activeIndex].avatar" alt="">
+            <img src="./img/avatar_1.jpg" alt="">
+            <h5 id="user">Sabrina</h5>
           </figure>
+          <div class="icons">
+            <i class="fa-solid fa-spinner"></i>
+            <i class="fa-solid fa-message"></i>
+            <i class="fa-solid fa-ellipsis-vertical menu_left_bar"></i>
+          </div><!--icon-->
+        </div><!--info-->
+
+        <!-- banner notifiche  -->
+        <div class="notifiche">
+          <span class="bell">
+            <i class="fa-solid fa-bell-slash"></i>
+          </span>
+          <span>
+            <h5>Ricevi notifiche di nuovi messaggi</h5>
+            <a class="notifiche-desktop" href="#">Attiva le notifiche Desktop</a>
+          </span>
+        </div><!--notifiche-->
+
+        <!-- searchbar -->
+        <div class="search">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" placeholder="Cerca o inizia una nuova chat" v-model="search">
+        </div><!--search-->
+
+        <!--chat-left -->
+        <ul class="list">
+          <li class="bg-hover-chats" v-for="(contact, i) in filteredList" @click="active(i)" :class="{'active': i === activeIndex}">
+            <div class="chat-left">
+              <img class="profil-pic" v-bind:src="contact.avatar" alt="">
+              <div class="info-contact">
+                <span class="contact-name">{{contact.name}}</span>
+                <p class="status">{{lastMessage(i).message}}</p>
+              </div>
+              <span class="date">{{lastMessage(i).date}}</span>
+            </div>
+          </li>
+        </ul>
+      </div><!--sidebar-->
+
+      <!-- main content  -->
+      <div class="main-content">
+        <div class="sidebar-right">
+          <div class="info">
+            <figure class="contact-img">
+              <img v-bind:src="contacts[activeIndex].avatar" alt="">
+            </figure>
             <div class="info-contact">
               <span class="contact-name">{{contacts[activeIndex].name}}</span>
-              <p class="status">Ultimo messaggio inviato</p>
+              <p class="status">Ultimo accesso oggi</p>
             </div>
             <div class="right-icon">
               <div class="icons">
@@ -77,38 +79,32 @@
                 <i class="fa-solid fa-ellipsis-vertical menu_left_bar"></i>
               </div><!--icons-->
             </div><!--right-icon-->
-        </div><!--info-->
-      </div><!--sidebar-right-->
+          </div><!--info-->
+        </div><!--sidebar-right-->
 
-      <!-- chat right  -->
-      <ul class="chat">
-        <li class="message sent" v-for="item in contacts[activeIndex].messages" :class="{ sent: item.status === 'sent', received: item.status === 'received' }"
-        >{{item.message}}</li>
-      </ul>
+        <!-- chat right  -->
+        <ul class="chat">
+          <li class="message sent" v-for="item in contacts[activeIndex].messages"
+            :class="{ sent: item.status === 'sent', received: item.status === 'received' }">{{item.message}}</li>
+        </ul>
 
-      <!-- toolbar chat  -->
+        <!-- toolbar chat  -->
         <div class="toolbar toolbar-chat">
           <span class="icon">
             <i class="fa-regular fa-face-smile"></i>
           </span>
-          <input @keyup.enter=" addMessage()"
-          v-model="newMessage"
-            class="chat-input"
-            type="text"
-            placeholder="Scrivi messaggio"
-          />
+          <input @keyup.enter=" addMessage()" v-model="newMessage" class="chat-input" type="text"
+            placeholder="Scrivi messaggio" />
           <span class="icon">
             <i class="fa-solid fa-microphone"></i>
           </span>
         </div><!--toolbar-->
-    </div><!--main-content-->
-  </div><!--contact-container-->
-</div><!--app-->
+      </div><!--main-content-->
+    </div><!--contact-container-->
+  </div><!--app-->
 
-<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-<script src="./js/app.js"></script>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script src="./js/app.js"></script>
 </body>
-
-</html>
 
 </html>
