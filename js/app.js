@@ -186,7 +186,7 @@ app({
               date: DateTime.local(2020, 1, 10, 15, 51),
               message: 'OK!!',
               status: 'received',
-              dropdown: false, // Di default false 
+              dropdown: false, // Di default false
             },
           ],
         },
@@ -214,18 +214,18 @@ app({
           dropdown: false,
         });
         this.newMessage = '';
+        // Funzione risposta automatica
+        setTimeout(() => {
+          const autoAnswer = {
+            message: '',
+            image: './img/madame.jpg',
+            date: DateTime.now(),
+            status: 'received',
+            dropdown: false,
+          };
+          this.contacts[this.activeIndex].messages.push(autoAnswer);
+        }, 1000);
       }
-      // Funzione risposta automatica
-      setTimeout(() => {
-        const autoAnswer = {
-          message: '',
-          image: './img/madame.jpg',
-          date: DateTime.now(),
-          status: 'received',
-          dropdown: false,
-        };
-        this.contacts[this.activeIndex].messages.push(autoAnswer);
-      }, 1000);
     },
     // Funzione per visualizzare ultimo messaggio ricevuto/inviato
     lastMessage(index) {
@@ -234,17 +234,18 @@ app({
       // ottenere l'indice dell'ultimo elemento dell'array dei messaggi.
       return message[message.length - 1];
     },
-    // funzione per vedere o meno il dropdown 
+    // funzione per vedere o meno il dropdown
     showDropdown(index) {
       //array contacts, specifichiamo l'indice attivo, prendiamo array messaggi e la proprietà dropdown quando è falsa non si vede
-      // qunado è diversa da falsa si vede 
-      this.contacts[this.activeIndex].messages[index].dropdown = !this.contacts[this.activeIndex].messages[index].dropdown
+      // qunado è diversa da falsa si vede
+      this.contacts[this.activeIndex].messages[index].dropdown =
+        !this.contacts[this.activeIndex].messages[index].dropdown;
     },
     // funzione per cancellare il messaggio
-    deleteMsg(index){
+    deleteMsg(index) {
       //.splice per cancellare il messaggio dell'elemento attivo
-      this.contacts[this.activeIndex].messages.splice(index, 1)
-    }
+      this.contacts[this.activeIndex].messages.splice(index, 1);
+    },
   },
 
   // Funzione ricerca con filtro
