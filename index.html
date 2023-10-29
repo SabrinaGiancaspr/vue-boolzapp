@@ -56,7 +56,7 @@
                 <span class="contact-name">{{contact.name}}</span>
                 <p class="status">{{lastMessage(i).message}}</p>
               </div>
-              <span class="date">{{lastMessage(i).date.toFormat("HH:mm")}}</span>
+              <span class="date">{{showDateLastMsg(i)}}</span>
             </div>
           </li>
         </ul>
@@ -89,8 +89,8 @@
             :class="{ sent: item.status === 'sent', received: item.status === 'received' }">{{item.message}}
             <div v-if="item.image">
               <img :src="item.image" alt="Image" />
-            </div> 
-            <span class="date-msg">{{item.date.toFormat("HH:mm")}}</span> 
+            </div>
+            <span class="date-msg">{{item.date.toFormat("HH:mm")}}</span>
             <i class="fa-solid fa-chevron-down" @click="showDropdown(index)"></i>
             <div class="dropdown" v-if="item.dropdown">
               <div class="delete-message">Message info</div>

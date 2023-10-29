@@ -231,8 +231,19 @@ app({
     lastMessage(index) {
       // l'array di messaggi associato al contatto corrispondente all'indice fornito
       let message = this.contacts[index].messages;
+      if (message.length === 0) {
+        return '';
+      }
       // ottenere l'indice dell'ultimo elemento dell'array dei messaggi.
       return message[message.length - 1];
+    },
+
+    showDateLastMsg(index) {
+      let message = this.contacts[index].messages;
+      if (message.length === 0) {
+        return '';
+      }
+      return message[message.length - 1].date.toFormat('HH:mm');
     },
     // funzione per vedere o meno il dropdown
     showDropdown(index) {
